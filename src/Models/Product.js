@@ -63,12 +63,12 @@ const ProductSchema = new Schema({
       },
     },
   ],
-  avatarMulter: [
-    {
-      type: String,
-      default: null,
-    },
-  ],
+  // avatarMulter: [
+  //   {
+  //     type: String,
+  //     default: null,
+  //   },
+  // ],
   product_comments: {
     type: Schema.Types.ObjectId,
     ref: "Comment",
