@@ -13,7 +13,7 @@ const cpUpload = uploadProduct.fields([
 routerProduct
   .route("/")
   .get(UserController.getAll)
-  .post(cpUpload, UserController.addProduct);
+  .post(UserController.addProduct);
 
 routerProduct
   .route("/category/:categoryName")
