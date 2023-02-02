@@ -79,10 +79,10 @@ const addProduct = async (req, res, next) => {
           const newIndex = indexCom + 1;
           return {
             product,
-            newIndex
-          }
+            newIndex,
+          };
         })
-        .then(data => {
+        .then((data) => {
           const dataCommnets = {
             comment_index: data.newIndex,
             comment_ProductID: data.product._id,
@@ -224,7 +224,8 @@ const postProductID = async (req, res, next) => {
 const getProductID = (req, res, next) => {
   const { productID } = req.params;
 
-  Product.find({ _id: productID }).populate("product_comments")
+  Product.find({ _id: productID })
+    .populate("product_comments")
     .then((data) => {
       return res.status(200).json({
         data,
