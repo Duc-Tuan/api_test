@@ -13,11 +13,7 @@ const cpUpload = uploadProduct.fields([
 routerProduct
   .route("/")
   .get(UserController.getAll)
-  .post(
-    decentralization.decentralization__Products,
-    cpUpload,
-    UserController.addProduct
-  );
+  .post(cpUpload, UserController.addProduct);
 
 routerProduct
   .route("/category/:categoryName")
