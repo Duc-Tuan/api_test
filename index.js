@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const Users = require("./src/Routers/User");
 
 mongoose
   .connect(
@@ -13,6 +14,7 @@ app.get("/", (req, res) => {
   return res.send("SERVER ON");
 });
 
+app.use("/user", Users)
 
 // Start the server
 const port = process.env.PORT || 3000;
