@@ -14,7 +14,8 @@ routerProduct
   .route("/")
   .get(UserController.getAll)
   .post(
-    // cpUpload,
+    decentralization.decentralization__Products,
+    cpUpload,
     UserController.addProduct
   );
 

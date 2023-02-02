@@ -40,6 +40,7 @@ const addProduct = async (req, res, next) => {
   const { avatar, product_img } = req.files;
   if (avatar && product_img) {
     const image = [];
+    const avtMulter = [];
     for (var i = 0; i < product_img.length; i++) {
       const result = await Cloudinary.uploader.upload(product_img[i].path, {
         folder: "products",
@@ -48,6 +49,7 @@ const addProduct = async (req, res, next) => {
         url: result.secure_url,
         Cloudinary_id: result.public_id,
       });
+      avtMulter.push(product_img[i].path);
     }
     req.body.product_img = image;
 
@@ -60,8 +62,11 @@ const addProduct = async (req, res, next) => {
         url: result.secure_url,
         Cloudinary_id: result.public_id,
       });
+      avtMulter.push(avatar[i].path);
     }
     req.body.avatar = img;
+
+    req.body.avatarMulter = avtMulter;
   }
   Product.countDocuments()
     .then((data) => {

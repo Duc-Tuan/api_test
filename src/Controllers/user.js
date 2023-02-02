@@ -340,6 +340,7 @@ const newUseHistory = (req, res, next) => {
   User.findById(userID)
     .then(async (data) => {
       const newHistory = req.body.data;
+      newHistory.Code = Math.random().toString(36).substring(2, 10);
       const Historys = await HistoryBuy.findById(data.user_historyID);
       Historys.HistoryBuy_data.push(newHistory);
       Historys.save();
