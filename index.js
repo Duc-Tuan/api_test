@@ -15,7 +15,14 @@ app.get("/", (req, res) => {
   return res.send("SERVER ON");
 });
 
-app.use("/products", products)
+app.use("/products", products);
+app.use("/src/Images/avatarUsers", express.static("src/Images/avatarUsers"));
+app.use(
+  "/src/Images/ImageProducts",
+  express.static("src/Images/ImageProducts")
+);
+app.use("/src/Images/ImageBanner", express.static("src/Images/ImageBanner"));
+app.use("/src/Images/Promotion", express.static("src/Images/Promotion"));
 
 // Start the server
 const port = process.env.PORT || 3000;
