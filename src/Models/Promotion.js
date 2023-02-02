@@ -4,8 +4,8 @@ const Schema = mongodb.Schema;
 const PromotionSchema = new Schema(
   {
     Promotion_percent: {
-      type: String,
-      default: "0",
+      type: Number,
+      default: 0,
     },
     Promotion_start: {
       type: String,
