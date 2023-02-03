@@ -1,12 +1,12 @@
 const express = require("express");
 const routerUsers = express.Router();
 
-const UserController = require("../Controllers/User");
+const UserController = require("../Controllers/product");
 // const uploadFile = require("../middlewares/uploadFile");
 // const decentralization = require("../DecentralizationAdmin");
 
 routerUsers.route("/")
-  .get(UserController.index);
+  .get(UserController.getAll);
 
 // routerUsers.route("/login").post(UserController.postLoginUser);
 
