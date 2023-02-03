@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const app = express();
 
 const products = require("./src/Routers/product");
-const users = require("./src/Routers/user");
 const searchProducts = require("./src/Routers/searchProducts");
 const banner = require("./src/Routers/banner");
 const category = require("./src/Routers/Category");
@@ -24,7 +23,6 @@ app.get("/", (req, res) => {
 });
 
 app.use("/products", products);
-app.use("/users", users);
 app.use("/search/products", searchProducts);
 app.use("/banner", banner);
 app.use("/category", category);
