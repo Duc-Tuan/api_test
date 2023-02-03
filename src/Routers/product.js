@@ -14,7 +14,7 @@ routerProduct
   .route("/")
   .get(UserController.getAll)
   .post(
-    // cpUpload,
+    cpUpload,
     UserController.addProduct
   );
 
