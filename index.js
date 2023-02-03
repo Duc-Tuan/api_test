@@ -41,7 +41,7 @@ app.use("/src/Images/ImageBanner", express.static("src/Images/ImageBanner"));
 app.use("/src/Images/Promotion", express.static("src/Images/Promotion"));
 
 // Admin
-app.use("/userAdmin", userAdmin);
+// app.use("/userAdmin", userAdmin);
 
 // Start the server
 const port = process.env.PORT || 3000;
