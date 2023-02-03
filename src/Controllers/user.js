@@ -17,7 +17,7 @@ const index = (req, res, next) => {
   //     });
   //   })
   //   .catch((err) => next(err));
-  return res.send("SERVER ON");
+  return res.send("SERVER ON USERS");
 };
 
 // const getloginUser = (req, res, next) => {
@@ -370,7 +370,7 @@ const index = (req, res, next) => {
 // };
 
 module.exports = {
-  index,
+  index
   // getloginUser,
   // postLoginUser,
   // newUser,
