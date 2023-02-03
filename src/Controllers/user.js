@@ -10,7 +10,7 @@ const User = require("../Models/user");
 // const nodemailer = require("nodemailer");
 
 const index = (req, res, next) => {
-  User.find({})
+  User.find()
     .then((users) => {
       return res.status(200).json({
         users,
