@@ -2,8 +2,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 
-// const users = require("./src/Routers/user");
 const products = require("./src/Routers/product");
+
+// const users = require("./src/Routers/user");
+// const products = require("./src/Routers/product");
 // const searchProducts = require("./src/Routers/searchProducts");
 // const banner = require("./src/Routers/banner");
 // const category = require("./src/Routers/Category");
