@@ -1,48 +1,48 @@
 const express = require("express");
-const router = express.Router();
+const routerUsers = express.Router();
 
 const UserController = require("../Controllers/user");
 const uploadFile = require("../middlewares/uploadFile");
-const decentralization = require("../DecentralizationAdmin");
+const decentralization = require("../DecentralizationAdmin/index");
 
-router.route("/").post(decentralization.decentralization__Users, UserController.index);
+routerUsers.route("/").post(decentralization.decentralization__Users, UserController.index);
 
-router.route("/login").post(UserController.postLoginUser);
+routerUsers.route("/login").post(UserController.postLoginUser);
 
-router.route("/loginUser").post(UserController.getloginUser);
+routerUsers.route("/loginUser").post(UserController.getloginUser);
 
-router.route("/register").post(UserController.newUser);
+routerUsers.route("/register").post(UserController.newUser);
 
-router.route("/resetPass").post(UserController.resetPass);
+routerUsers.route("/resetPass").post(UserController.resetPass);
 
-router
+routerUsers
   .route("/:userID")
   .get(UserController.getUserById)
   .put(UserController.replaceUser)
   .patch(uploadFile.single("avatar"), UserController.updateUser)
   .delete(decentralization.decentralization__Users ,UserController.deleteUser);
 
-router
+routerUsers
   .route("/:userID/carts")
   .get(UserController.getUserProduct)
   .post(UserController.newUseProduct);
 
-router
+routerUsers
   .route("/:userID/pay")
   .get(UserController.getUserPay)
   .post(UserController.newUsePay);
 
-router
+routerUsers
   .route("/:userID/history")
   .get(UserController.getUserHistory)
   .post(UserController.newUseHistory);
 
-router.route("/:userID/history/:statusName")
+routerUsers.route("/:userID/history/:statusName")
   .get(UserController.getUserHistoryStatus);
 
-router
+routerUsers
   .route("/:userID/carts/:productID")
   .post(UserController.postProductUser)
   .delete(UserController.deleteCartItem);
 
-module.exports = router;
+module.exports = routerUsers;

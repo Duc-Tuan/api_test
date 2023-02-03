@@ -2,11 +2,11 @@ const User = require("../Models/user");
 const Product = require("../Models/Product");
 const Carts = require("../Models/Cart");
 const HistoryBuy = require("../Models/HistoryBuy");
+const Pay = require("../Models/Pay");
 const fs = require("fs");
 const path = require("path");
 const jwt = require("jsonwebtoken");
 const Cloudinary = require("../utils/cloudnary");
-const Pay = require("../Models/Pay");
 const nodemailer = require("nodemailer");
 
 const index = (req, res, next) => {
