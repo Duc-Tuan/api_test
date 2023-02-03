@@ -5,7 +5,7 @@ const UserController = require("../Controllers/user");
 const uploadFile = require("../middlewares/uploadFile");
 const decentralization = require("../DecentralizationAdmin");
 
-router.route("/").post(decentralization.decentralization__Users, UserController.index);
+router.route("/").get(decentralization.decentralization__Users, UserController.index);
 
 router.route("/login").post(UserController.postLoginUser);
 
