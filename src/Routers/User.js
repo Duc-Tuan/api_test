@@ -1,7 +1,7 @@
 const express = require("express");
 const routerUsers = express.Router();
 
-const UserController = require("../Controllers/user");
+const UserController = require("../Controllers/User");
 // const uploadFile = require("../middlewares/uploadFile");
 // const decentralization = require("../DecentralizationAdmin");
 
