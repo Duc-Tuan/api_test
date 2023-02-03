@@ -4,31 +4,29 @@ const app = express();
 
 const products = require("./src/Routers/product");
 
-// const users = require("./src/Routers/user");
-// const products = require("./src/Routers/product");
-// const searchProducts = require("./src/Routers/searchProducts");
-// const banner = require("./src/Routers/banner");
-// const category = require("./src/Routers/Category");
-// const promotion = require("./src/Routers/Promotion");
-// const comments = require("./src/Routers/Comments");
-// const userAdmin = require("./src/Routers/Admin/User");
+// const users = require("./Routers/user");
+// const products = require("./Routers/product");
+// const searchProducts = require("./Routers/searchProducts");
+// const banner = require("./Routers/banner");
+// const category = require("./Routers/Category");
+// const promotion = require("./Routers/Promotion");
+// const comments = require("./Routers/Comments");
+// const userAdmin = require("./Routers/Admin/User");
 
 mongoose
   .connect(
-    "mongodb+srv://admin:admin12345@cluster0.fkjkxce.mongodb.net/customerdb?retryWrites=true&w=majority",
-    { useNewUrlParser: true }
+    "mongodb+srv://admin:admin12345@cluster0.fkjkxce.mongodb.net/customerdb?retryWrites=true&w=majority"
   )
   .then(() => console.log("connection success"))
   .catch((error) => console.error(`connection failed ${error}`));
 
-mongoose.set("strictQuery", false);
 
 app.get("/", (req, res) => {
   return res.send("SERVER ON");
 });
 
-// app.use("/users", users);
 app.use("/products", products);
+// app.use("/users", users);
 // app.use("/search/products", searchProducts);
 // app.use("/banner", banner);
 // app.use("/category", category);
