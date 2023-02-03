@@ -3,7 +3,7 @@ const routerUsers = express.Router();
 
 const UserController = require("../Controllers/user");
 const uploadFile = require("../middlewares/uploadFile");
-const decentralization = require("../DecentralizationAdmin/index");
+const decentralization = require("../DecentralizationAdmin");
 
 routerUsers.route("/").post(decentralization.decentralization__Users, UserController.index);
 
