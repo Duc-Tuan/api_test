@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParesr = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
 
@@ -10,6 +11,25 @@ const category = require("./src/Routers/Category");
 const promotion = require("./src/Routers/Promotion");
 const comments = require("./src/Routers/Comments");
 const userAdmin = require("./src/Routers/Admin/User");
+
+app.use(express.urlencoded({limit: '50mb'}));
+app.use(express.json({limit: '50mb'}));
+app.use(bodyParesr.json());
+
+app.use(function (req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type"
+  );
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  // Pass to next layer of middleware
+  next();
+});
 
 mongoose
   .connect(
