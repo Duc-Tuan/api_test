@@ -9,7 +9,7 @@ const banner = require("./src/Routers/banner");
 const category = require("./src/Routers/Category");
 const promotion = require("./src/Routers/Promotion");
 const comments = require("./src/Routers/Comments");
-const userAdmin = require("./src/Routers/Admin/User");
+// const userAdmin = require("./src/Routers/Admin/User");
 
 mongoose
   .connect(
@@ -39,7 +39,7 @@ app.use("/src/Images/ImageBanner", express.static("src/Images/ImageBanner"));
 app.use("/src/Images/Promotion", express.static("src/Images/Promotion"));
 
 // Admin
-app.use("/userAdmin", userAdmin);
+// app.use("/userAdmin", userAdmin);
 
 // Start the server
 const port = process.env.PORT || 3000;
