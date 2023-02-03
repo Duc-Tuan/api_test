@@ -6,9 +6,9 @@ const products = require("./src/Routers/product");
 // const users = require("./src/Routers/user");
 const searchProducts = require("./src/Routers/searchProducts");
 const banner = require("./src/Routers/banner");
-// const category = require("./src/Routers/Category");
+const category = require("./src/Routers/Category");
 const promotion = require("./src/Routers/Promotion");
-// const comments = require("./src/Routers/Comments");
+const comments = require("./src/Routers/Comments");
 // const userAdmin = require("./src/Routers/Admin/User");
 
 mongoose
@@ -27,9 +27,9 @@ app.use("/products", products);
 // app.use("/users", users);
 app.use("/search/products", searchProducts);
 app.use("/banner", banner);
-// app.use("/category", category);
+app.use("/category", category);
 app.use("/promotion", promotion);
-// app.use("/comments", comments);
+app.use("/comments", comments);
 app.use("/src/Images/avatarUsers", express.static("src/Images/avatarUsers"));
 app.use(
   "/src/Images/ImageProducts",
