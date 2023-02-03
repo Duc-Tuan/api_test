@@ -1,4 +1,4 @@
-const User = require("../Models/user");
+// const User = require("../Models/user");
 // const Product = require("../Models/Product");
 // const Carts = require("../Models/Cart");
 // const HistoryBuy = require("../Models/HistoryBuy");
@@ -10,13 +10,14 @@ const User = require("../Models/user");
 // const nodemailer = require("nodemailer");
 
 const index = (req, res, next) => {
-  User.find()
-    .then((users) => {
-      return res.status(200).json({
-        users,
-      });
-    })
-    .catch((err) => next(err));
+  // User.find()
+  //   .then((users) => {
+  //     return res.status(200).json({
+  //       users,
+  //     });
+  //   })
+  //   .catch((err) => next(err));
+  return res.send("SERVER ON");
 };
 
 // const getloginUser = (req, res, next) => {
